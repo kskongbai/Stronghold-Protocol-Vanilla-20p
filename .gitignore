@@ -1,0 +1,19 @@
+# Dependencies, local caches, generated media and extracted game assets are not source code.
+node_modules/
+.cache/
+video/
+
+# Official / extracted game assets are distributed separately; the repo keeps the code and data tables.
+public/assets/
+
+# Local plugin secrets and machine-local state.
+plugins/.admin-key
+plugins/.studio-key
+*.log
+*.tmp
+
+# Local editor / OS files.
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

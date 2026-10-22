@@ -1,0 +1,53 @@
+:root { color-scheme: dark; --bg:#070c0a; --panel:#0d1512; --line:#233a32; --mint:#63e6b0; --gold:#e8c46a; --red:#ff7b72; --text:#d9eee4; --lo:#8fa79b; }
+* { box-sizing: border-box; }
+body { margin: 0; background: radial-gradient(circle at 20% 0%, #10251c, var(--bg) 55%); color: var(--text); font: 14px/1.45 "Segoe UI", "Microsoft YaHei", sans-serif; }
+#app { max-width: 1180px; margin: 0 auto; padding: 28px 20px 80px; }
+h1 { margin: 0 0 6px; font-size: 22px; letter-spacing: .08em; }
+code { color: var(--gold); }
+.muted { color: var(--lo); }
+.small { font-size: 12px; }
+.card { background: rgba(11,20,16,.94); border: 1px solid var(--line); padding: 18px; border-radius: 8px; }
+.login { max-width: 520px; margin: 8vh auto 0; }
+label { display: block; margin: 14px 0 0; color: var(--lo); font-size: 12px; }
+input, select, button { font: inherit; }
+input, select { width: 100%; margin-top: 6px; padding: 9px 10px; color: var(--text); background: #09110e; border: 1px solid var(--line); border-radius: 4px; }
+input:focus, select:focus { outline: 1px solid var(--mint); }
+button { cursor: pointer; padding: 8px 12px; color: var(--text); background: #12201a; border: 1px solid var(--line); border-radius: 4px; }
+button:hover { border-color: var(--mint); }
+button.primary { color: #04140d; background: var(--mint); border-color: var(--mint); font-weight: 700; }
+button.danger { border-color: #5b2a2a; color: #ffb4ae; }
+button.mini { padding: 4px 8px; font-size: 12px; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.msg { margin-top: 10px; color: var(--gold); min-height: 18px; font-size: 13px; }
+.msg.err { color: var(--red); }
+.top { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+.room { margin: 16px 0; border: 1px solid var(--line); border-radius: 6px; background: rgba(9,16,13,.9); }
+.room > .head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+.room > .head b { color: var(--mint); letter-spacing: .12em; }
+.room > .head .tag { color: var(--lo); font-size: 12px; margin-left: 8px; }
+.rooms-unite { padding: 10px 12px; border-bottom: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 8px; align-items: end; }
+.rooms-unite label { margin: 0; width: 110px; }
+.players { display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 12px; padding: 12px; }
+.player { border: 1px solid var(--line); border-radius: 6px; padding: 10px; background: rgba(6,12,9,.8); }
+.player h3 { margin: 0 0 6px; font-size: 15px; }
+.player .stats { color: var(--lo); font-size: 12px; margin-bottom: 8px; }
+.player .ctl { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 6px 0; }
+.player .ctl input { width: 90px; margin: 0; padding: 5px 6px; }
+.player .ctl select { width: 180px; margin: 0; padding: 5px 6px; }
+.player .ctl button { padding: 5px 8px; font-size: 12px; }
+.player .layers { color: var(--lo); font-size: 12px; overflow-wrap: anywhere; }
+.empty { color: var(--lo); padding: 18px; }
+
+/* Room plugin cards: the same card/toggle shape as the in-room plugin panel */
+.plugin-pick { padding: 10px 12px; border-bottom: 1px solid var(--line); }
+.plugin-pick__title { color: var(--lo); font-size: 12px; margin-bottom: 8px; letter-spacing: .04em; }
+.plugin-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 8px; }
+.plugin-card { display: flex; gap: 9px; align-items: flex-start; margin: 0; padding: 9px 10px; border: 1px solid var(--line); border-radius: 6px; background: rgba(6,12,9,.8); cursor: pointer; transition: border-color .12s, background .12s; }
+.plugin-card:hover { border-color: #3d6b5a; }
+.plugin-card.is-on { border-color: var(--mint); background: rgba(26,58,45,.35); }
+.plugin-card input { width: 15px; height: 15px; margin: 2px 0 0; accent-color: var(--mint); flex: 0 0 auto; }
+.plugin-card__body { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.plugin-card__name { color: var(--text); font-size: 13px; font-weight: 600; }
+.plugin-card__meta { color: var(--mint); font-size: 11px; letter-spacing: .03em; }
+.plugin-card__desc { color: var(--lo); font-size: 11px; line-height: 1.35; max-height: 3.9em; overflow: hidden; }
+.plugin-apply { margin-top: 9px; align-self: flex-start; }

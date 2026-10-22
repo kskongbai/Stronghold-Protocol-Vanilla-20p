@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="data:," />
+<title>卫戍协议 · 管理员后台</title>
+<link rel="stylesheet" href="/admin/app.css" />
+</head>
+<body>
+<div id="app">
+  <section id="login" class="card login">
+    <h1>管理员后台</h1>
+    <p class="muted">密钥在启动服务器的 CMD 窗口里（<code>Admin key:</code>）。<b>只填密钥即可进入</b>；名字只用于后台显示，不再绑定浏览器。</p>
+    <label>显示名字（可选） <input id="name" maxlength="32" autocomplete="username" placeholder="Admin" /></label>
+    <label>密钥 <input id="key" type="password" maxlength="64" autocomplete="off" /></label>
+    <div class="row">
+      <button id="loginBtn" class="primary">进入后台</button>
+      <span id="loginMsg" class="msg"></span>
+    </div>
+    <p class="muted small">当前服务器：<b id="serverLabel"></b> · 已记住：<span id="remembered">—</span></p>
+  </section>
+
+  <section id="dash" hidden>
+    <header class="top">
+      <div>
+        <h1>管理员后台</h1>
+        <p class="muted small"><span id="serverLabel2"></span> · 管理员 <b id="who"></b> · <span id="clock"></span></p>
+      </div>
+      <div class="row">
+        <button id="refresh">刷新</button>
+        <button id="logout">退出</button>
+      </div>
+    </header>
+    <div id="msg" class="msg"></div>
+    <div id="rooms"></div>
+  </section>
+</div>
+<script src="/admin/app.js?v=20261020-roomseat"></script>
+</body>
+</html>
