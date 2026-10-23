@@ -2,8 +2,8 @@
 
 ### 发行
 
-- 首个正式整合包发行：`Stronghold-Protocol-Vanilla-20p-v0.3.1-20p.1.zip`，包含素材与运行依赖，根目录提供 Windows `启动服务器.bat` 和 macOS / Linux `启动服务器.sh`。
-- README 重排并加入 20 人房间、商店概率、皮肤图鉴、对局聊天截图；新增 `发行说明.md`。
+- 首个正式整合包发行：`Stronghold-Protocol-Vanilla-20p-v0.3.1-20p.1.zip`，包含 **最新 V3.2.5 完整素材包**与运行依赖，根目录提供 Windows `启动服务器.bat` 和 macOS / Linux `启动服务器.sh`。
+- README 重排并加入 20 人房间、商店概率、皮肤图鉴、对局聊天截图；新增 `发行说明.md` 和 `SHA256SUMS.txt` 下载校验说明。
 
 ### 新增
 
