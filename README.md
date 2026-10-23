@@ -83,14 +83,21 @@
 ### 方式一：下载完整整合包（推荐）
 
 1. 打开 [Releases](https://github.com/kskongbai/Stronghold-Protocol-Vanilla-20p/releases/latest)，下载 **`Stronghold-Protocol-Vanilla-20p-v0.3.1-20p.1.zip`**。
-2. 解压到路径较短的文件夹（Windows 上建议不要放在 OneDrive 同步目录里）。压缩包内已套一层 `Stronghold-Protocol-Vanilla-20p/` 文件夹。
+2. 解压到路径较短的文件夹（Windows 上建议不要放在 OneDrive 同步目录里）。解压后的根目录应同时有：
+   - `Stronghold-Protocol-Vanilla-20p/` 项目文件夹
+   - `run.bat`
+   - `run.sh`
+
+   即 `run.bat` / `run.sh` 和项目文件夹**并排**放在解压根目录，不要把它们放进项目文件夹里面。
 3. 安装 **Node.js 22 或 24（LTS）**：Windows 可在 PowerShell 运行 `winget install OpenJS.NodeJS.LTS`，或到 <https://nodejs.org/zh-cn/download> 下载；macOS / Linux 用发行版包管理器、nvm 或 fnm。
 4. 启动：
-   - **Windows**：双击根目录的 **`启动服务器.bat`**。如果弹出安全警告，点「运行」；防火墙弹窗请允许「专用网络」。
-   - **macOS / Linux**：在根目录运行 `bash 启动服务器.sh`（或 `chmod +x 启动服务器.sh && ./启动服务器.sh`）。
+   - **Windows**：双击解压根目录的 **`run.bat`**。如果弹出安全警告，点「运行」；防火墙弹窗请允许「专用网络」。
+   - **macOS / Linux**：在解压根目录运行 `bash run.sh`（或 `chmod +x run.sh && ./run.sh`）。
 5. 浏览器打开 <http://localhost:3000>。启动窗口会列出局域网地址，直接发给同一 Wi-Fi 的朋友即可。
 
-> 整合包已经包含 **最新 V3.2.5 素材包**、`public/assets/` 和运行依赖，首次启动不需要再下载素材。换端口：`启动服务器.bat --port 3001` 或 `bash 启动服务器.sh --port 3001`。
+`run.bat` / `run.sh` 只负责调用 `Stronghold-Protocol-Vanilla-20p/scripts/start-windows.bat` 或 `scripts/start.sh`，启动、依赖检查和浏览器打开仍由项目脚本完成。
+
+> 整合包已经包含 **最新 V3.2.5 素材包**、`public/assets/` 和运行依赖，首次启动不需要再下载素材。换端口：`run.bat --port 3001` 或 `bash run.sh --port 3001`。
 
 ### 下载校验（SHA-256）
 
@@ -156,7 +163,7 @@ npm start          # http://localhost:3000
 - **皮肤与语音**：干员调配右栏皮肤图鉴；语音试听，缺失配音回退中文。
 - **对局聊天**：文字消息、未读计数、最近消息浮层；6 套 × 6 表情。
 - **屏幕适配**：手机横屏 16:9；平板横屏 / 桌面全屏，大厅与等待室铺满视口。
-- **一键启动**：Windows `启动服务器.bat`，macOS / Linux `启动服务器.sh`。
+- **一键启动**：解压根目录的 `run.bat`（Windows）与 `run.sh`（macOS / Linux），直接调用项目 `scripts/` 下的启动脚本。
 - **整合包**：已放入最新 **V3.2.5 完整素材包**和运行依赖，解压即用；源码仓库不附带素材。
 
 完整历史见 [CHANGELOG.md](CHANGELOG.md)。本次发行的详细说明见 [发行说明.md](发行说明.md)。
@@ -202,6 +209,6 @@ An **unofficial, non-commercial fan remake** of Arknights' seasonal auto-chess t
 
 This fork adds a 20-player room layout, A–E shared card pools, shop odds and next-round income forecasts, a skin gallery with voice previews, in-match chat with emotes, and responsive phone / tablet / desktop layouts on top of the sganggs 0.3.1 web version.
 
-**Run the full bundle:** download the latest ZIP from [Releases](https://github.com/kskongbai/Stronghold-Protocol-Vanilla-20p/releases/latest), install Node.js 22 or 24, then double-click `启动服务器.bat` (Windows) or run `bash 启动服务器.sh` (macOS / Linux), and open <http://localhost:3000>. From source: `npm install && npm run setup && npm start`.
+**Run the full bundle:** download the latest ZIP from [Releases](https://github.com/kskongbai/Stronghold-Protocol-Vanilla-20p/releases/latest), install Node.js 22 or 24. The ZIP extracts to `Stronghold-Protocol-Vanilla-20p/` plus `run.bat` and `run.sh` side by side. Double-click `run.bat` (Windows) or run `bash run.sh` (macOS / Linux), then open <http://localhost:3000>. From source: `npm install && npm run setup && npm start`.
 
 **Disclaimer:** not affiliated with or endorsed by Hypergryph or Yostar. All Arknights names, art, audio, text and data are © their respective owners and are **not** covered by this project's GPL licence. For study and personal non-commercial use only — no selling, paid distribution, paid servers or monetisation. Content will be removed on request of the rights holders. Provided “as is”, without warranty.
